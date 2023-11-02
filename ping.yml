@@ -1,0 +1,19 @@
+---
+- name: ping.yml
+  hosts: servers
+  remote_user: root
+  become: yes
+
+  tasks:
+   - name: test connection
+     ping:
+
+   - name: Patch CentOS Servers
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: Update all packages
+      yum:
+        name: '*'
+        state: latest
